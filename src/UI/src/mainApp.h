@@ -3,6 +3,11 @@
 
 #include "SDL2/SDL.h"
 #include <iostream>
+#include <vector>
+#include "configuration.h"
+#include "configuration/configurationLoader.h"
+#include "components/UIScreen.h"
+
 using namespace std;
 
 class mainApp{
@@ -19,10 +24,13 @@ class mainApp{
 
         bool running();
 
+        std::vector<UIScreen> screenSet;
+
     private:
         bool isRunning;
         SDL_Window *window;
-        SDL_Renderer * renderer;
+        SDL_Renderer *renderer;
+        Configuration *configuration;
 };
 
 #endif // MAINAPP_H

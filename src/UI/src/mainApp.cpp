@@ -1,7 +1,12 @@
 #include "mainApp.h"
 
-mainApp::mainApp() {
 
+mainApp::mainApp() {
+    configurationLoader *conf = new configurationLoader();
+    if(!conf->loadScreenSetConfiguration(configuration))
+    {
+        cout<< "Error reading configuration file" <<endl;
+    }
 }
 
 void mainApp::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen) {

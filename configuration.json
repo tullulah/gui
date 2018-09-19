@@ -1,0 +1,58 @@
+[{
+    "name" : "SplashScreen",
+    "type" : "splash",
+    "background-image" : "./splashbackground.png",
+    "background-color" : "FFFFFF",
+    "components": []
+},
+{
+    "name" : "MainScreen",
+    "type" : "screen",
+    "background-image" : "./mainbackground.png",
+    "background-color" : "FFFFFF",
+    "components": [
+        {
+            "id" : "logoImage",
+            "type" : "UIImage",
+            "image-src" : "./banner.png",
+            "width" : 100,
+            "height" : 100,
+            "posx" : 100,
+            "posy" : 50
+        },
+        {
+            "id" : "PopupButton",
+            "type" : "UIButton",
+            "label" : "Open Popup",
+            "image-src" : "./Question.png",
+            "width" : 50,
+            "height" : 20,
+            "posx" : 200,
+            "posy" : 300,
+            "action" : "OpenChild",
+            "target" : "QuestionScreen"
+        },
+        {
+            "id" : "CloseButton",
+            "type" : "UIButton",
+            "label" : "Close me",
+            "image-src" : "./Close.png",
+            "width" : 50,
+            "height" : 20,
+            "posx" : 200,
+            "posy" : 300,
+            "action" : "CloseApp"
+        }
+    ]
+},
+{
+    "name" : "QuestionScreen",
+    "type" : "UIPopup",
+    "background-image" : "./popup.png",
+    "background-color" : "FFFFFF",
+    "popup-type": "Question",
+    "title" : "I have a question",
+    "label" : "Yes or not?"    
+}
+
+]
