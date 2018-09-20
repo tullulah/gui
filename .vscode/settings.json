@@ -4,6 +4,7 @@
         "iostream": "cpp",
         "*.tcc": "cpp",
         "system_error": "cpp",
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "ostream": "cpp"
     }
 }

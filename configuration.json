@@ -1,13 +1,13 @@
 [{
     "name" : "SplashScreen",
-    "type" : "splash",
+    "type" : "UISplash",
     "background-image" : "./splashbackground.png",
     "background-color" : "FFFFFF",
     "components": []
 },
 {
     "name" : "MainScreen",
-    "type" : "screen",
+    "type" : "UIScreen",
     "background-image" : "./mainbackground.png",
     "background-color" : "FFFFFF",
     "components": [
