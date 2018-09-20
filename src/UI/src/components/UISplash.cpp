@@ -1,8 +1,8 @@
 #include "UISplash.h"
 
 void UISplash::buildLayout(){
-    app->windowSurface = SDL_GetWindowSurface(app->window);
-    imageSurface = SDL_LoadBMP(".././../logo.bmp");
+    windowSurface = SDL_GetWindowSurface(window);
+    imageSurface = SDL_LoadBMP(image.c_str());
     
     if(!imageSurface)
     {
@@ -12,8 +12,7 @@ void UISplash::buildLayout(){
 
 UISplash::UISplash(SDL_Window *w, string i){
     image=i;
-    
-
+    window = w;
     buildLayout();
 }
 

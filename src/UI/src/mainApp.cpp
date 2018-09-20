@@ -2,11 +2,7 @@
 
 
 mainApp::mainApp() {
-    configurationLoader *conf = new configurationLoader();
-    if(!conf->loadScreenSetConfiguration(configuration))
-    {
-        cout<< "Error reading configuration file" <<endl;
-    }
+    
 }
 
 void mainApp::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen) {
@@ -36,6 +32,18 @@ void mainApp::init(const char* title, int xpos, int ypos, int width, int height,
     } else {
         isRunning = false;
     }
+
+    configurationLoader *conf = new configurationLoader();
+    configuration = new Configuration();
+    
+    screenSet = &configuration->screenSet;
+
+    if(!conf->loadScreenSetConfiguration(window, screenSet))
+    {
+        cout<< "Error reading configuration file" <<endl;
+    }
+
+    viewManager = new ViewManager(configuration);
 }
 
 void mainApp::handleEvents(){

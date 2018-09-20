@@ -1,6 +1,7 @@
 #include <map>
 #include <vector>
-#include "UIScreen.h"
+#include "components/UIScreen.h"
+#include "configuration.h"
 
 #ifndef VIEW_MANAGER
 #define VIEW_MANAGER
@@ -8,18 +9,17 @@
 
 /*class to control the workflow of the screens*/
 
-class viewManager{
+class ViewManager{
     public:
-        viewManager (std::vector<UIScreen> *screenSet);
+        ViewManager (Configuration *configuration);
 
         void updateCurrentScreen();
         void renderCurrentScreen();
         void cleanCurrentScreen();
 
     private:
-        std::vector<UIScreen> *screenSet;
+        std::vector<UIScreen*> *screenSet;
         UIScreen * currentScreen;
-
 };
 
 #endif

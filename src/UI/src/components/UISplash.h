@@ -1,11 +1,13 @@
 #include <iostream>
-#include "../mainApp.h"
-#include "../UIComponent.h"
+#include "UIScreen.h"
 #include <SDL2/SDL.h>
 
 using namespace std;
 
-class UISplash : public UIComponent{
+#ifndef UI_SPLASH
+#define UI_SPLASH
+
+class UISplash : public UIScreen {
     public:
         UISplash(SDL_Window *w, string i);
         ~ UISplash();
@@ -21,7 +23,9 @@ class UISplash : public UIComponent{
         int timeToClose;
         bool fadeOut;
         string image;
-        mainApp *app;
         SDL_Surface * imageSurface;
         SDL_Surface * windowSurface;
+        SDL_Window * window;
 };
+
+#endif

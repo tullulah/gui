@@ -3,6 +3,7 @@
     "type" : "UISplash",
     "background-image" : "./splashbackground.png",
     "background-color" : "FFFFFF",
+    "image-src" : "./logo.bmp",
     "components": []
 },
 {

@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 #include "configuration.h"
+#include "ViewManager.h"
 #include "configuration/configurationLoader.h"
 #include "components/UIScreen.h"
 
@@ -29,12 +30,14 @@ class mainApp{
 
         SDL_Surface *windowSurface;
 
-        std::vector<UIScreen> screenSet;
+        std::vector<UIScreen*> *screenSet;
 
     private:
         bool isRunning;
         
         Configuration *configuration;
+        ViewManager *viewManager;
+
 };
 
 #endif // MAINAPP_H

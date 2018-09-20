@@ -10,7 +10,7 @@ class Configuration{
         Configuration();
         ~Configuration();
 
-        std::vector<UIScreen> *screenSet;
+        std::vector<UIScreen*> screenSet;
 };
 
 #endif

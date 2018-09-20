@@ -5,6 +5,9 @@
         "*.tcc": "cpp",
         "system_error": "cpp",
         "iosfwd": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "deque": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp"
     }
 }
