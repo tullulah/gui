@@ -9,20 +9,23 @@ set(UI_HEADERS
 	/*components*/
 	${CMAKE_CURRENT_SOURCE_DIR}/src/UIComponent.h
 	${CMAKE_CURRENT_SOURCE_DIR}/src/components/UIImage.h
-
+	${CMAKE_CURRENT_SOURCE_DIR}/src/components/UISplash.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/components/UIScreen.h
+	${CMAKE_CURRENT_SOURCE_DIR}/src/components/viewManager.h
 	${CMAKE_CURRENT_SOURCE_DIR}/src/mainApp.h
 
 	/*Configuration*/
 	${CMAKE_CURRENT_SOURCE_DIR}/src/configuration.h
 	${CMAKE_CURRENT_SOURCE_DIR}/src/configuration/configurationLoader.h
-	
 )
 
 set(UI_SOURCES
 	/*components*/
 	${CMAKE_CURRENT_SOURCE_DIR}/src/UIComponent.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/src/components/UIImage.cpp
-
+	${CMAKE_CURRENT_SOURCE_DIR}/src/components/UISplash.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/components/UIScreen.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/components/viewManager.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/src/mainApp.cpp
 
 	/*Configuration*/

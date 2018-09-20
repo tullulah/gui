@@ -7,7 +7,15 @@
 
 class UIScreen : UIComponent{
     public:
+        UIScreen();
+        ~UIScreen();
+        
         std::vector<UIComponent> componentList;
+
+        // polymorfism
+        void update();
+        void render();
+        void clean();
     private:
         
 };

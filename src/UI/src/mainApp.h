@@ -24,12 +24,16 @@ class mainApp{
 
         bool running();
 
+        SDL_Window *window;
+        SDL_Renderer *renderer;
+
+        SDL_Surface *windowSurface;
+
         std::vector<UIScreen> screenSet;
 
     private:
         bool isRunning;
-        SDL_Window *window;
-        SDL_Renderer *renderer;
+        
         Configuration *configuration;
 };
 
