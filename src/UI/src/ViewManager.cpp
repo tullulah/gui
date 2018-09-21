@@ -4,23 +4,27 @@ ViewManager::ViewManager(Configuration *configuration){
     screenSet = &configuration->screenSet;
 }
 
-void ViewManager::cleanCurrentScreen(){
+void ViewManager::cleanCurrentScreen(SDL_Renderer *renderer){
     if(currentScreen)
     {
-        currentScreen->clean();
+        currentScreen->clean(renderer);
     }
 }
 
-void ViewManager::renderCurrentScreen(){
+void ViewManager::updateCurrentScreen(SDL_Renderer *renderer){
     if(currentScreen)
     {
-        currentScreen->render();
+        currentScreen->update(renderer);
     }
 }
 
-void ViewManager::updateCurrentScreen(){
+void ViewManager::renderCurrentScreen(SDL_Renderer *renderer){
     if(currentScreen)
     {
-        currentScreen->update();
+        currentScreen->render(renderer);
     }
+}
+
+void ViewManager::setCurrentScreen(UIScreen *screen){
+    currentScreen = screen;
 }

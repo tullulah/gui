@@ -1,21 +1,23 @@
 #include "UIScreen.h"
 
 UIScreen::UIScreen(){
-
+    mainScreen = false;
 }
 
 UIScreen::~UIScreen(){
     
 }
 
-void UIScreen::update() {
-    cout << "implementation of uptate in UIScreen" <<endl;
+void UIScreen::update(SDL_Renderer *renderer) {
+   for(std::vector<UIComponent>::iterator it = componentList.begin(); it != componentList.end(); ++it) {
+       std::cout<< (*it).type <<std::endl;
+   }  
 }
 
-void UIScreen::clean() {
-    cout << "implementation of clean in UIScreen" <<endl;
+void UIScreen::clean(SDL_Renderer *renderer) {
+    //renderer->clean();
 }
 
-void UIScreen::render() {
-    cout << "implementation of render in UIScreen" <<endl;
+void UIScreen::render(SDL_Renderer *renderer) {
+    //renderer->render();
 }

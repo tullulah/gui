@@ -1,4 +1,6 @@
 #include <iostream>
+#include <SDL2/SDL.h>
+
 
 using namespace std;
 
@@ -9,12 +11,14 @@ class UIComponent{
         UIComponent();
         ~UIComponent();
 
-        virtual void update();
-        virtual void render();
-        virtual void clean();
+        virtual void update(SDL_Renderer *renderer);
+        virtual void render(SDL_Renderer *renderer);
+        virtual void clean(SDL_Renderer *renderer);
+
+        string name ,type, background_image, background_color;
 
     private:
-        int type;
+        
     protected:
 
     

@@ -9,18 +9,19 @@ using namespace std;
 
 class UISplash : public UIScreen {
     public:
-        UISplash(SDL_Window *w, string i);
+        UISplash(SDL_Window *_window, string _image, int _splashTime, string _nextScreen, string _name, string _type, string _background_image, string _background_color);
         ~ UISplash();
 
         // polymorfism
-        void update();
-        void render();
-        void clean();
+        void update(SDL_Renderer *renderer);
+        void render(SDL_Renderer *renderer);
+        void clean(SDL_Renderer *renderer);
 
     private:
         void buildLayout();
         int elapsedTime;
-        int timeToClose;
+        int splashTime;
+        string nextScreen;
         bool fadeOut;
         string image;
         SDL_Surface * imageSurface;

@@ -8,12 +8,12 @@ UIComponent::~UIComponent(){
     
 }
 
-void UIComponent::update(){
+void UIComponent::update(SDL_Renderer *renderer){
     cout<< "update not implemented" << endl;
 }
-void UIComponent::render(){
+void UIComponent::render(SDL_Renderer *renderer){
     cout<< "render not implemented" << endl;
 }
-void UIComponent::clean(){
+void UIComponent::clean(SDL_Renderer *renderer){
     cout<< "clean not implemented" << endl;
 }

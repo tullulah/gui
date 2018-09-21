@@ -10,17 +10,22 @@ void mainApp::init(const char* title, int xpos, int ypos, int width, int height,
 
     int flags = 0;
     if(fullscreen){
-        flags = SDL_WINDOW_FULLSCREEN;
+        flags &= SDL_WINDOW_FULLSCREEN;
     }
+
+    flags &= SDL_WINDOW_ALLOW_HIGHDPI;
 
     if(SDL_Init(SDL_INIT_EVERYTHING) == 0) {
         cout << "Subsystems initialized..." << endl;
 
         window = SDL_CreateWindow(title, xpos, ypos, width, height, flags);
+        
         if(window)
         {
             cout<< "Window Created!!" << endl;
         }
+
+        windowSurface = SDL_GetWindowSurface(window);
 
         renderer = SDL_CreateRenderer(window, -1, 0);
 
@@ -36,14 +41,23 @@ void mainApp::init(const char* title, int xpos, int ypos, int width, int height,
     configurationLoader *conf = new configurationLoader();
     configuration = new Configuration();
     
-    screenSet = &configuration->screenSet;
+    screenSet = configuration->screenSet;
 
-    if(!conf->loadScreenSetConfiguration(window, screenSet))
+    if(!conf->loadScreenSetConfiguration(window, &screenSet))
     {
         cout<< "Error reading configuration file" <<endl;
     }
-
+    
     viewManager = new ViewManager(configuration);
+
+    for(vector<UIScreen*>::iterator iter = screenSet.begin(); iter!= screenSet.end(); ++iter){
+        cout << (*iter)->mainScreen << endl;
+        if((*iter)->mainScreen)
+        {
+            viewManager->setCurrentScreen((*iter));
+        }
+    }    
+
 }
 
 void mainApp::handleEvents(){
@@ -61,8 +75,11 @@ void mainApp::handleEvents(){
 
 void mainApp::render(){
     SDL_RenderClear(renderer);
-
+    
     // add stuff to renderer
+    viewManager->cleanCurrentScreen(renderer);
+    viewManager->updateCurrentScreen(renderer);
+    viewManager->renderCurrentScreen(renderer);
 
     SDL_RenderPresent(renderer);
 

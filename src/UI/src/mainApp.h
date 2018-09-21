@@ -30,7 +30,7 @@ class mainApp{
 
         SDL_Surface *windowSurface;
 
-        std::vector<UIScreen*> *screenSet;
+        std::vector<UIScreen*> screenSet;
 
     private:
         bool isRunning;
